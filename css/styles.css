@@ -1,0 +1,138 @@
+/* Los tamaños en px son absolutos y en em son relativos */
+/* Por defecto el tamaño de fuente es 16px. El selector que contiene la fuente de todo es html */
+/* Para calcular el tamaño en em se divide el valor en px/16 */
+
+/* :root es una pseudoclase y tiene más jerarquía que html, se recomienda su uso para setear
+las caracteristicas a un nivel superior en lugar de usar html */
+:root {
+font-size: 16px;
+  --grey30: #212121;
+  --grey20: #212429;
+  --grey10: #616161;
+}
+
+/* html{
+   font-size: 15px;
+} */
+
+/* Para asignar las fuentes con @font-face y copiando la fuente dentro de la carpeta fonts del proyecto */
+/* @font-face {
+  font-family: charter;
+  src: url('../fonts/charter-regular.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-italic.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold.otf');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold-italic.otf');
+  font-style: italic;
+  font-weight: bold;
+} */
+
+body{
+  color: var(--grey30);
+  /* Llamado a la fuente definida en @font-face */
+  /* font-family: charter; */
+
+  /* Llamado a la fuente definida por link en el head del index.html y tomada desde https://fonts.google.com/ */
+  font-family: 'Roboto', sans-serif;
+ }
+
+a{
+  color: var(--grey30);
+}
+
+header{
+  font-size: 14px;
+  color: var(--grey10);
+}
+
+/* Ejemplo de selector anidado header a
+estilo de texto para quitar el subrayado con text-decoration */
+header a {
+  color: var(--grey10);
+  text-decoration: none;
+}
+
+/* Pseudoclase :hover */
+header  a:hover{
+  /* se puede cambiar el valor de una variable solo para un selector especifico
+  --grey30: red; */
+  color: var(--grey30);
+}
+
+/* Selector anidado y estilo de texto */
+nav details summary {
+  font-weight: bold;
+}
+
+/* otros ejemplos de psudoclases ademas de :hover y :root */
+
+/* ol li:first-child{
+  border: 1px solid red;
+} */
+/* ol li:last-child{
+  border: 1px solid red;
+} */
+/* ol li:nth-child(2n){
+  border: 1px solid red;
+} */
+/* ol li:nth-child(1n){
+  border: 1px solid red;
+} */
+/* ol li:nth-child(odd){
+  border: 1px solid red;
+} */
+/* ol li:nth-child(even){
+  border: 1px solid red;
+} */
+
+h1{
+  font-size:60px;
+  /* Dividimos 60px/16= 3.75em */
+  /* font-size:3.75em; */
+}
+
+h2{
+  font-size: 32px;
+ /* Dividimos 32px/16 = 2em */
+  /* font-size: 2em; */
+}
+
+h3{
+  font-size: 24px;
+  /* Dividimos 24px/16 = 1.5em */
+  /* font-size: 1.5em; */
+}
+
+/*Para este proyecto la etiqueta de parrafo tiene un tamaño es de 16px,
+no hay que especificarlo ya que es el mismo tamaño por defecto de html */
+
+/* Para hacer que el tamaño de fuente se ajuste de acuerdo al tamaño de la pantalla del dispositivo */
+/* @media screen and (max-width: 600px) {
+  body{
+    font-size: 5px;
+  }
+} */
+
+/* Si utilizamos valores absolutos en los tamaños de objetos, cuando cambia el tamaño de pantalla
+se hacen scrollbars. Para corregirlos se utiliza la funcionalidad del viewport width  */
+/* Ejemplo de visualización con el header, que se ajusta al 80% del ancho del viewport */
+/* header{
+  background:red;
+  width: 80vw;
+  /* width: 800px; */
+  /* height: ; */
+/* } */
