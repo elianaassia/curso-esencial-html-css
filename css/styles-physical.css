@@ -1,0 +1,400 @@
+/* Los tamaños en px son absolutos y en em son relativos */
+/* Por defecto el tamaño de fuente es 16px. El selector que contiene la fuente de todo es html */
+/* Para calcular el tamaño en em se divide el valor en px/16 */
+
+/* :root es una pseudoclase y tiene más jerarquía que html, se recomienda su uso para setear
+las caracteristicas a un nivel superior en lugar de usar html */
+/* Declaramos variables de colores */
+:root {
+font-size: 16px;
+  --grey30: #212121;
+  --grey20: #212429;
+  --grey10: #616161;
+}
+
+html{
+  scroll-behavior: smooth;
+   /* font-size: 15px; */
+}
+
+/* Para asignar las fuentes con @font-face y copiando la fuente dentro de la carpeta fonts del proyecto */
+/* @font-face {
+  font-family: charter;
+  src: url('../fonts/charter-regular.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-italic.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold.otf');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold-italic.otf');
+  font-style: italic;
+  font-weight: bold;
+} */
+
+body{
+  color: var(--grey30);
+  /* Llamado a la fuente definida en @font-face */
+  /* font-family: charter; */
+
+  /* Llamado a la fuente definida por link en el head del index.html y tomada desde https://fonts.google.com/ */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+ }
+
+a{
+  color: var(--grey30);
+}
+
+header{
+  font-size: 14px;
+  width: 188px;
+  color: var(--grey10);
+  position: absolute;
+  top: 64px;
+  left: -232px;
+
+  /*Position contiene las siguientes propiedades como coordenadas top left right bottom y z-index
+   El z-index sirve para traslapar los objetos. Coloca uno encima o detras (con -1) */
+  /* Position relative empuja el objeto hacia las coordenadas indicadas conservando el espacio definido
+  iniclamente, ocupa todo el espacio del objeto */
+  /* position: relative; */
+
+  /* Position absolute no ocupa todo el espacio del objeto. Ocupa solo el tamaño que ocupa el contenido y
+  se puede indicar la ubicación usando las propiedades de coordenadas*/
+  /* Truco: con position absoluto y las coordenadas todas en cero y con margin, se hacen las ventanas de modal
+  top: 0;  left: 0;  right: 0;  bottom: 0;  margin: 50px; */
+
+  /* OJO OJO OJO. Se puede hacer que un objeto tenga position absoluta pero relativa a otro objeto.
+  Por ejemplo puede ser relativo al un section-content. Para esto toca moverlo de posición en el html
+  y colocarlo dentro del section-content y al section-content colocarle position: relative  y las
+  coordenadas de ubicación se especifican en el objeto*/
+
+  /* La posicion fixed ocupa al igual que absolute solo el tamaño del contenido ydeja fijo el objeto
+   con lo cual al hacer scroll continua el flujo dentro de la pagina */
+
+   /* La posición sticky ocupa todo el espacio al igual que relative, se necesita tener asociada una coordenada
+   para ser relativo a esa ubicación por ejemplo top: 0; y se queda pegado ahi al hacer scrollbars*/
+
+  /* position: sticky; */
+  /* top: 0; */
+  /* left: 0; */
+  /* right: 0; */
+  /* bottom: 0; */
+  /* margin: 50px; */
+  /* z-index: -1; */
+  /* position: absolute;
+  position: fixed;
+  position: sticky; */
+}
+
+/* Ejemplo de selector anidado header a
+estilo de texto para quitar el subrayado con text-decoration */
+header a {
+  color: var(--grey10);
+  text-decoration: none;
+}
+
+header li{
+  margin-bottom: 16px;
+}
+/* Pseudoclase :hover */
+header  a:hover{
+  /* se puede cambiar el valor de una variable solo para un selector especifico
+  --grey30: red; */
+  color: var(--grey30);
+}
+
+/* Selector anidado y estilo de texto */
+nav details summary {
+  font-weight: bold;
+  line-height: 24px;
+}
+
+/* otros ejemplos de psudoclases ademas de :hover y :root */
+
+/* ol li:first-child{
+  border: 1px solid red;
+} */
+/* ol li:last-child{
+  border: 1px solid red;
+} */
+/* ol li:nth-child(2n){
+  border: 1px solid red;
+} */
+/* ol li:nth-child(1n){
+  border: 1px solid red;
+} */
+/* ol li:nth-child(odd){
+  border: 1px solid red;
+} */
+/* ol li:nth-child(even){
+  border: 1px solid red;
+} */
+
+
+
+
+h1{
+  font-size:60px;
+  /* Dividimos 60px/16= 3.75em */
+  /* font-size:3.75em; */
+  margin-top: 64px;
+  margin-bottom: 16px;
+  font-weight: normal;
+  /* Otra forma de colocar los margenes en todas las coordenadas con el sentido de las
+  manecillas del reloj. Cuando es cero no hay necesidad de colocar px.
+  Cuando se repite el mismo valor para top y bottom se puede obviar colocar el bottom.
+  ocurre lo mismo para right y left */
+
+  /* margin: top right bottom left;
+  margin: 64px 20px 16px 10px; */
+
+  /* Tecnica para ajustar automáticamente el tamaño de la caja. NO se recomienda hacerlo de manera generalizada
+  ni para todos los objetos. Es mejor hacer los calculos de cada componente de la caja content, padding,
+  border y especificarlos */
+  /* border: 10px solid red;
+  width: 400px;
+  height: 400px;
+  padding: 40px;
+  box-sizing: border-box; */
+}
+
+/* Selector adyacente, solo para darle propiedad al parrafo mas cercano a h1 */
+h1 + p{
+  margin-bottom: 64px;
+}
+
+hr{
+  margin: 64px 0;
+}
+
+h2{
+  font-size: 32px;
+ /* Dividimos 32px/16 = 2em */
+  /* font-size: 2em; */
+  font-weight: normal;
+  margin: 64px 0 40px;
+}
+
+h3{
+  font-size: 24px;
+  /* Dividimos 24px/16 = 1.5em */
+  /* font-size: 1.5em; */
+  font-weight: normal;
+  margin-top: 16px;
+  margin-bottom: 24px;
+
+  /* Ejemplo de posicion sticky */
+  /* TRUCAZO para conservar un titulo fijo l mientras se lee el contenido y al hacer scrol */
+  /* position: sticky;
+  top: 0;
+  background: white; */
+}
+
+/*Para este proyecto la etiqueta de parrafo tiene un tamaño es de 16px,
+no hay que especificarlo ya que es el mismo tamaño por defecto de html */
+
+/* Para hacer que el tamaño de fuente se ajuste de acuerdo al tamaño de la pantalla del dispositivo */
+/* @media screen and (max-width: 600px) {
+  body{
+    font-size: 5px;
+  }
+} */
+
+/* Si utilizamos valores absolutos en los tamaños de objetos, cuando cambia el tamaño de pantalla
+se hacen scrollbars. Para corregirlos se utiliza la funcionalidad del viewport width  */
+/* Ejemplo de visualización con el header, que se ajusta al 80% del ancho del viewport */
+/* header{
+  background:red;
+  width: 80vw;
+  /* width: 800px; */
+  /* height: ; */
+/* } */
+
+/* Para asignarle el background al contenido que contiene código HTML y se encuentra en la
+etiqueta pre */
+pre{
+  font-size: 16px;
+  background: #FEC62E;
+  padding: 40px;
+  font-family: 'Roboto';
+  line-height: 24px;
+}
+
+blockquote{
+  font-size: 24px;
+  margin: 32px 0;
+  padding-left: 16px;
+  line-height: 24px;
+  border-left: 4px solid var(--grey30);
+  /* Otras propiedades de los borders */
+  /* border: 10px solid red;
+  border-top: 10px solid pink;
+  border-top-color: aqua;
+  border-top-style: dashed;
+  border-radius: 50px;
+  border-radius: 50px 100px 10px 0; */
+}
+
+blockquote span{
+  color: var(--grey10);
+}
+blockquote span:before{
+  content: '-';
+}
+
+.main{
+  /*Coloco el border solo para chequear el tamaño del main*/
+  /* border: 5px solid red; */
+
+  /*Se puede incluir una imagen de fondo o color a toda la pagina*/
+  /* background-image: linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png'); */
+  /* background: purple; */
+}
+
+.header{
+  position: sticky;
+  top: 0;
+}
+
+.wrapper{
+  width: 800px;
+  margin: auto;
+}
+
+.header-content{
+  position: relative;
+}
+
+.main-content{
+  background:white;
+  /* padding: 20px; */
+}
+
+/* Creamos una clase para hacer debug o depurar el css con diferentes elementos. Se escoge la de mejor utilidad
+de acuerdo a las caracteristicas del objeto que se está depurando. Puede ser box-shadow, outline, background o
+border con box-sizing para que no altere el tamaño de la caja.
+Esta clase se le debe incluir al objeto en el index.html */
+.debug{
+   box-shadow: inset 0 0 0 50px red;
+  /*box-shadow: inset 0 0 50px red;
+  box-shadow: 0 0 0 50px red; */
+
+  /* outline: 10px solid red; */
+
+  /* background: red; */
+
+  /* border: 1px solid red !important;
+  box-sizing: border-box; */
+}
+
+.hero{
+  /* Para backgrounds múltiples pero de solo imagenes
+  en este caso utilizaremos gradiente y la imagen de fondo*/
+
+  background-image: linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png');
+
+  /* Para degradados transparentes */
+  /* background-image: linear-gradient(to top, red , transparent) ; */
+
+  /* Backgrounds de gradientes solidos. Se incluye la coordenada y los colores y hasta
+  que medida o cantidad. Para 0 y 100 no hay que colocar nada*/
+
+  /* background-image: linear-gradient(to top, red , blue); */
+  /* background-image: linear-gradient(to top, red , blue 90%); */
+
+  /* Instrucción para background con una sola imagen */
+  /* background: url('../images/pattern.png'); */
+
+  /* También se puede colocar un color y una imagen. En caso que no encuentre la imagen, se
+  mostrará el color*/
+  /* background: red url('../images/pattern.png'); */
+
+
+  /* Otras propiedades del background| */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  /* background-position: left; */
+  /* background-position: right; */
+  /* background-position: bottom; */
+  /* background-position: top; */
+  /* background-position: left top; */
+  /* background-position: left 50px bottom 50px; */
+  /* background-position: left 50px bottom -50px; */
+  /* background-size: cover; */
+
+  height: 350px;
+
+  /* Div es una etiqueta que se renderiza como bloque, asi que llenara el espacio
+  que lo contiene, por esta razón no le colocaremos valor al ancho. El ancho se puede
+  colocar en px o en % */
+  /* width: 100%; */
+}
+
+/* Pseudo elementos */
+.section-content{
+  margin-top: 164px;
+}
+.section-content:first-of-type{
+  margin: 0;
+}
+.section-content ol li{
+  line-height: 24px;
+}
+.section-content ul li{
+  margin-bottom: 16px;
+}
+.section-content + hr{
+  display: none;
+}
+.section-content img {
+  margin-top: 40px ;
+}
+
+.section-content {
+  counter-reset: titlelist;
+}
+
+.section-content h3{
+  counter-increment: titlelist;
+  /* background: red; */
+  padding-bottom: 8px;
+  position: relative;
+}
+
+.section-content h3::before{
+  content: counter(titlelist) '. ';
+}
+
+  /* Para contar en numeros romanos, por defecto esta en decimal */
+  /* content: counter(titlelist, upper-roman); */
+
+
+.section-content h3::after{
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: var(--grey30);
+  display: inline-block;
+  /* border: 1px solid red; */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* Pseudo elemento para cambiar el color de selección de texto */
+/* ::selection{
+  background: red;
+} */
