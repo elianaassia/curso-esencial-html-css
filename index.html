@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles-physical.css">
+    <!-- <link rel="stylesheet" href="./css/styles-physical.css"> -->
+    <link rel="stylesheet" href="./css/styles-logical.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap"
       rel="stylesheet">
     <title>El Blog de Eli</title>
   </head>
@@ -63,7 +64,6 @@
                 </details>
               </nav>
             </header>
-
           </div>
         </div>
       </div>
@@ -122,19 +122,19 @@
                 <pre>
                 <!-- pre es una etiqueta para colocar codigo, el contenido debe estar alineado
                 todo a la izquierda -->
-    &lt;!DOCTYPE html&gt;
-    &lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-    &lt;/body&gt;
-    &lt;/html&gt;
-    </pre>
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
                 <h3 id="etq">Etiquetas</h3>
                 <p>Las etiquetas HTML van a ayudarnos a brindar una estructura y semántica al contenido de nuestro website y cada una tiene
                 características y usos diferentes aunque visualmente den un resultado similar.</p>
@@ -196,12 +196,67 @@
                   </ul>
               </section>
 
+                <!-- Slider -->
+                  <div class="section-content">
+                    <h2>Estos son unos videos para el slider</h2>
+                    <div class="slider">
+                      <scroll-container class="slider-container">
+                        <scroll-page class="slider-slide" id="video-1">
+                          <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/5f5Ig_U2Bpk" title="YouTube video player"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                          </iframe>
+                        </scroll-page>
+                        <scroll-page class="slider-slide" id="video-2">
+                          <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/qn4xBCdhYJM" title="YouTube video player"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                          </iframe>
+                        </scroll-page>
+                        <scroll-page class="slider-slide" id="video-3">
+                          <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/GGw-00NLRSg" title="YouTube video player"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                          </iframe>
+                        </scroll-page>
+                      </scroll-container>
+                      <div class="slider-bullet-list">
+                        <a href="#video-1" class="slider-bullet"></a>
+                        <a href="#video-2" class="slider-bullet"></a>
+                        <a href="#video-3" class="slider-bullet"></a>
+
+                      </div>
+                    </div>
+                  </div>
+
                 <!-- link a un website que abre en una ventana nueva -->
                 <!-- <a href="https://leonidasesteban.com" target="_blank">Bibliografía</a> -->
                 <p>
                   Si tienes alguna pregunta escríbeme a
                   <a href="mailto:me@leonidasesteban.com"> me@leonidasesteban.com</a>
                 </p>
+                <div class="section-content">
+                  <h2>Subscríbete anuestro newsletter </h2>
+                  <form action="#" class="form">
+                    <input type="text" required placeholder="Nombre">
+                    <input type="email" required placeholder="Correo electrónico">
+                    <input type="submit" value="Subscribirme">
+
+                    <!-- Otros tipos de input -->
+                    <!-- <input type="date" required placeholder="Fecha">
+                    <input type="checkbox">
+                    <input type="radio"> -->
+
+                    <!-- Lista de Selección -->
+                    <!-- <select name="" id="">
+                    <option value="">Curso 1</option>
+                    <option value="">Curso 2</option>
+                    <option value="">Curso 3</option>
+                    </select> -->
+
+                  </form>
+                </div>
+
             </div>
           </div>
         </main>

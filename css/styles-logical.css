@@ -7,14 +7,15 @@ las caracteristicas a un nivel superior en lugar de usar html */
 /* Declaramos variables de colores */
 :root {
 font-size: 16px;
-  --grey30: #212121;
-  --grey20: #212429;
-  --grey10: #616161;
+  --white30: white;
+  --white20: #A5A3A5;
+  --white10: #3A3539;
 }
 
-/* html{
-   font-size: 15px;
-} */
+html{
+   /* font-size: 15px; */
+  scroll-behavior: smooth;
+}
 
 /* Para asignar las fuentes con @font-face y copiando la fuente dentro de la carpeta fonts del proyecto */
 /* @font-face {
@@ -43,35 +44,76 @@ font-size: 16px;
 } */
 
 body{
-  color: var(--grey30);
+  color: var(--white30);
+  background: #251F24;
+  margin: 0;
+  /* Propiedades logicas para margenes */
+  /* margin-block: 50px;
+  margin-block-start: 100px;
+  margin-block-end: 100px; */
+
   /* Llamado a la fuente definida en @font-face */
   /* font-family: charter; */
 
   /* Llamado a la fuente definida por link en el head del index.html y tomada desde https://fonts.google.com/ */
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
  }
 
 a{
-  color: var(--grey30);
+  color: var(--white30);
+}
+
+.header{
+
+}
+
+.header-content{
+  /* Se comenta todo lo concerniente a posicion para que sea responsive */
+  /* position: relative;
+   inset-block-start: 65px; */
+
+   padding-inline: 20px;
 }
 
 header{
   font-size: 14px;
-  color: var(--grey10);
+  margin-block-start: 20px;
+  /* color: var(--white10); */
+   /* Se comenta todo lo concerniente a posicion para que sea responsive */
+   /* position: absolute; */
+    /* top */
+  /* inset-block-start: 0; */
+  /* left: */
+  /* inset-inline-start: -208px; */
+
+  /* inline-size: 188px; */
+
+  /* Otras posiciones abajo-derecha */
+  /* bottom */
+  /* inset-block-end: */
+
+  /* right: ; */
+  /* inset-inline-end: ; */
+
+}
+
+header li{
+  color: var(--white20);
+  margin-block-end: 16px;
 }
 
 /* Ejemplo de selector anidado header a
 estilo de texto para quitar el subrayado con text-decoration */
 header a {
-  color: var(--grey10);
+  color: var(--white20);
   text-decoration: none;
 }
 
 /* Pseudoclase :hover */
 header  a:hover{
   /* se puede cambiar el valor de una variable solo para un selector especifico
-  --grey30: red; */
-  color: var(--grey30);
+  --white30: red; */
+  color: var(--white30);
 }
 
 /* Selector anidado y estilo de texto */
@@ -100,22 +142,38 @@ nav details summary {
   border: 1px solid red;
 } */
 
+/* selector de grupo para especificar los pesos de las fuentes en todos los h */
+h1, h2, h3{
+  /* font-weight: normal; */
+}
+
 h1{
-  font-size:60px;
+  font-size:40px;
+  margin-block-start: 20px;
+  margin-block-end: 16px;
   /* Dividimos 60px/16= 3.75em */
   /* font-size:3.75em; */
 }
 
 h2{
   font-size: 32px;
+  margin-block: 40px;
+
  /* Dividimos 32px/16 = 2em */
   /* font-size: 2em; */
 }
 
 h3{
   font-size: 24px;
+  font-weight: 600;
+  margin-block: 16px;
   /* Dividimos 24px/16 = 1.5em */
   /* font-size: 1.5em; */
+}
+
+hr{
+  margin-block: 40px;
+  border-color: rgba(97, 97, 97, 0.2);
 }
 
 /*Para este proyecto la etiqueta de parrafo tiene un tamaño es de 16px,
@@ -141,14 +199,46 @@ se hacen scrollbars. Para corregirlos se utiliza la funcionalidad del viewport w
 /* Para asignarle el background al contenido que contiene código HTML y se encuentra en la
 etiqueta pre */
 pre{
-  background: #FEC62E;
+  background: var(--white10);
+  padding: 40px;
+  /* el overflow auto se utiliza cuando se desborda un elemento para que haga scroll solo en
+  el elemento y no en toda la pagina */
+  overflow: auto;
+  border-radius: 8px;
+  /* para hacer los bordes tambien a nivel logico se maneja inline y block
+  border-inline-start: , border-inline-end: , border-block-start: , border-block-end;
+  border-block-start-color:  y muchas mas combinaciones especificas; */
+  /* border-inline-start: 10px solid #5551ff;
+  border-block-start: 10px solid #5551ff;
+  border-inline-end: 10px solid #5551ff;
+  border-block-end: 10px solid #5551ff; */
+
+  /* en este caso se utiliza solo un borde simple y una sombra*/
+  border: 10px solid #5551ff;
+  box-shadow: -10px 10px 0 0 #ABAAF6;
+  /* para darle espacio hacia abajo con rtespecto al otro elemento| */
+  margin-block-end: 30px;
+
+  /* Para hacer los redondeados en las ezquinas o radius una por una */
+  /* border-start-start-radius: 60px; */
+  /* border-start-end-radius: 60px; */
+  /* border-end-end-radius: 60px; */
+  /* border-end-start-radius: 60px; */
+
+  /* Para hacer un circulo */
+/* border-radius: 50%;
+inline-size: 400px;
+block-size: 400px; */
 }
 
+p{
+  color: var(--white20);
+}
 .hero{
   /* Para backgrounds múltiples pero de solo imagenes
   en este caso utilizaremos gradiente y la imagen de fondo*/
-
-  background-image: linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png');
+  background-image: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+  /* background-image: linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png'); */
 
   /* Para degradados transparentes */
   /* background-image: linear-gradient(to top, red , transparent) ; */
@@ -179,7 +269,7 @@ pre{
   /* background-position: left 50px bottom -50px; */
   /* background-size: cover; */
 
-  height: 350px;
+  block-size: 50px;
 
   /* Div es una etiqueta que se renderiza como bloque, asi que llenara el espacio
   que lo contiene, por esta razón no le colocaremos valor al ancho. El ancho se puede
@@ -191,7 +281,13 @@ pre{
 
 .section-content {
   counter-reset: titlelist;
+}
 
+.section-content img{
+  margin-block-start: 40px;
+  display: block;
+/* para controlar el tamaño de la imagen y que no haga scroll */
+  max-inline-size: 100%;
 }
 
 .section-content h3{
@@ -199,19 +295,147 @@ pre{
 }
 
 .section-content h3::before{
-  content: counter(titlelist) '.';
+  content: counter(titlelist) '. ';
 
   /* Para contar en numeros romanos, por defecto esta en decimal */
   /* content: counter(titlelist, upper-roman); */
 
 }
 
-.section-content h3::after{
+/* .section-content h3::after{
   content: '';
   width: 32px;
   height: 4px;
-  background: var(--grey30);
+  background: var(--white30);
   display: inline-block;
+} */
+
+blockquote{
+  margin-block-start: 80px;
+  margin-block-end: 63px;
+  background-color: var(--white10);
+  border-radius: 8px;
+  line-height: 32px;
+  font-size: 24px;
+  /* El pading para este objeto esta de igual tamaño en todas las coordenadas
+  por lo cual se puede usar la propiedad solo padding*/
+  /* padding: 24px; */
+
+  /* colocamos para cada coordenada de forma independiente para saber cada propiedad */
+  padding-inline-end: 24px;
+  padding-inline-start: 24px;
+  padding-block-end: 24px;
+  padding-block-start: 24px;
+}
+
+blockquote p{
+  color: var(--white30);
+}
+.section-content + hr{
+  display: none;
+}
+.main {
+}
+
+.wrapper{
+  max-inline-size: 902px;
+  margin: auto;
+}
+
+.main-content{
+  padding-inline: 16px;
+}
+
+.slider{
+
+}
+.slider-container{
+  /* block-size: 100px; */
+  display: block;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.video{
+ margin: 0;
+ display: inline-block;
+ width: 100%;
+ height: auto;
+ aspect-ratio: 16/9;
+
+}
+
+.slider-bullet-list {
+  text-align: center;
+  margin-block-start: 10px;
+}
+
+.slider-bullet{
+  display: inline-block;
+  inline-size: 15px;
+  block-size: 15px;
+  background: white;
+  border-radius: 50%;
+}
+
+.form input{
+  inline-size:  100%;
+  border: 1px solid var(--white30);
+  background: #251f24;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding-inline: 16px;
+  padding-block: 12px;
+  color: var(--white30);
+  font-size: 16px;
+  display: block;
+  margin-block-end: 24px;
+}
+
+.form input::-webkit-input-placeholder{
+  color: var(--white20);
+}
+
+.form input[type="submit"]{
+  background: #157EFB;
+  border: none;
+}
+
+/* Tamaños @media screen
+Móviles en horizontal o tablets en vertical (min-width: 768px)
+Tablets en horizonal y escritorios normales (min-width: 1024px)
+Escritorios muy anchos (min-width: 1350px)  */
+
+@media screen and (min-width: 1366px){
+
+  .hero{
+    block-size: 350px;
+  }
+
+  .header{
+    position: sticky;
+    inset-block-start: -45px;
+  }
+
+  .header-content{
+    position: relative;
+     inset-block-start: 65px;
+     padding-inline: 0;
+  }
+
+  header{
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: -208px;
+     inline-size: 188px;
+  }
+
+  h1{
+    font-size:60px;
+    margin-block-start: 64px;
+  }
 
 }
 
